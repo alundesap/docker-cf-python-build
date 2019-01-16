@@ -11,6 +11,10 @@ docker push alunde/cf-python-build:latest
 
 Connect with:
 ```
+vi  /Users/i830671/.ssh/known_hosts ; echo "Root PW is Welcome1" ; ssh root@localhost
 ssh root@localhost
 ```
 
+```
+export dockid=$(docker container ls | grep  cf-python-build | cut -d ' ' -f 1) ; echo $dockid ; docker container stop $dockid
+```
