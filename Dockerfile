@@ -7,7 +7,7 @@ ENV ROOT_PASSWORD root
 
 ADD https://cli.run.pivotal.io/stable?release=linux64-binary /tmp/cf-cli.tgz
 ADD https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/download/v2.0.8/mta_plugin_linux_amd64 /tmp/mta-plugin.bin
-RUN apk update	&& apk upgrade && apk add htop python3 git build-base openssl-dev libffi-dev python3-dev bash jq \
+RUN apk update	&& apk upgrade && apk add htop python3 git build-base openssl-dev libffi-dev python3-dev bash jq vim \
 		&& ln -s /usr/bin/python3 /usr/bin/python \
 		&& ln -s /usr/bin/pip3 /usr/bin/pip \
 		&& mkdir -p /usr/local/bin \
