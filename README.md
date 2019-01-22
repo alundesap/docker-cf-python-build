@@ -18,3 +18,4 @@ ssh root@localhost
 ```
 export dockid=$(docker container ls | grep  cf-python-build | cut -d ' ' -f 1) ; echo $dockid ; docker container stop $dockid
 ```
+
