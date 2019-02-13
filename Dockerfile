@@ -7,6 +7,7 @@ ENV ROOT_PASSWORD root
 
 ADD https://cli.run.pivotal.io/stable?release=linux64-binary /tmp/cf-cli.tgz
 ADD https://github.com/cloudfoundry-incubator/multiapps-cli-plugin/releases/download/v2.0.8/mta_plugin_linux_amd64 /tmp/mta-plugin.bin
+ADD http://thedrop.sap-a-team.com/files/xs.onpremise.runtime.client_linuxx86_64.zip /tmp/xs.onpremise.runtime.client_linuxx86_64.zip
 RUN apk update	&& apk upgrade && apk add htop python3 git build-base openssl-dev libffi-dev python3-dev bash jq vim \
 		&& ln -s /usr/bin/python3 /usr/bin/python \
 		&& ln -s /usr/bin/pip3 /usr/bin/pip \
@@ -18,6 +19,7 @@ RUN apk update	&& apk upgrade && apk add htop python3 git build-base openssl-dev
 		&& cf plugins \
 		&& rm -f /tmp/cf-cli.tgz \
 		&& rm -f /tmp/mta-plugin.bin \
+		&& rm -f /tmp/xs.onpremise.runtime.client_linuxx86_64.zip \
 		&& echo "" > /etc/motd \
 		&& echo "Welcome to Andrew's cf-python-build" >> /etc/motd \
 		&& echo "" >> /etc/motd \
